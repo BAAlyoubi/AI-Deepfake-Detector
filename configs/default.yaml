@@ -1,0 +1,29 @@
+seed: 42
+device: auto
+
+data:
+  train_dir: data/train
+  val_dir: data/val
+  test_dir: null
+  image_size: 224
+  batch_size: 32
+  num_workers: 4
+  class_names:
+    - real
+    - fake
+
+model:
+  pretrained: true
+  hidden_size: 256
+  lstm_layers: 1
+  dropout: 0.35
+  bidirectional: true
+
+train:
+  epochs: 30
+  learning_rate: 0.0001
+  weight_decay: 0.00001
+  label_smoothing: 0.02
+  mixed_precision: true
+  patience: 7
+  output_dir: runs/mobilenetv2_cbam_lstm
